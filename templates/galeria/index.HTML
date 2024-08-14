@@ -24,13 +24,13 @@
                             {% for fotografia in cards %}
                             <li class="card">
                                 <a href="{% url 'imagen' %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png' %}" alt="foto">
+                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/'%}{{ fotografia.foto }}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
                                 <div class="card__info">
-                                    <p class="card__titulo">{{ info.nombre }}</p>
+                                    <p class="card__titulo">{{ fotografia.nombre }}</p>
                                     <div class="card__texto">
-                                        <p class="card__descricao">{{ info.leyenda }}</p>
+                                        <p class="card__descricao">{{ fotografia.leyenda }}</p>
                                         <span>
                                             <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
                                         </span>
