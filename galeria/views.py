@@ -1,17 +1,12 @@
 from django.shortcuts import render
 
-
+from galeria.models import Fotografia
 
 def index(request):
-    datos = {
-    1:{"nombre": "Nebulosa de Carina",
-       "leyenda": "webbtelescope.org / NASA / James Webb"},
-    2:{"nombre": "Galaxia NGC 1079",
-       "leyenda": "nasa.org / NASA / Hubble"}
-    }
+    fotografias = Fotografia.objects.all()
 
     
-    return render (request,'galeria/index.HTML',{"cards": datos})
+    return render (request,'galeria/index.HTML',{"cards": fotografias})
 
 def imagen(request):
     return render (request, 'galeria/imagen.HTML')
