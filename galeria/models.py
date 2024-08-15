@@ -17,6 +17,7 @@ class Fotografia(models.Model):
     descripcion = models.TextField(null= False, blank=False)
     #Textfield porque es unn texto mas largo y elaborado, sin limite de caracteres pero asegurando cubrir el null y blank
     foto= models.CharField(max_length=100, null= False, blank=False)
+    publicada = models.BooleanField(default=False)
 
     def __str__(self):
         return f"Fotografia [nombre={self.nombre}]"
