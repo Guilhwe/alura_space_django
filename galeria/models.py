@@ -17,7 +17,7 @@ class Fotografia(models.Model):
     categoria = models.CharField(max_length =100, choices=opciones_de_categoria, default='')
     descripcion = models.TextField(null= False, blank=False)
     #Textfield porque es unn texto mas largo y elaborado, sin limite de caracteres pero asegurando cubrir el null y blank
-    foto= models.CharField(max_length=100, null= False, blank=False)
+    foto= models.ImageField(upload_to= "fotos/%Y/%m/%d", blank=True )
     publicada = models.BooleanField(default=False)
     fecha_fotografia = models.DateTimeField(default=datetime.now, blank=False)
 
