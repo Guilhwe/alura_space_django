@@ -14,5 +14,13 @@ def imagen(request, foto_id):
     return render (request, 'galeria/imagen.HTML',{"fotografia":fotografia})
 
 def buscar(request):
-    return render (request, "galeria/buscar.html")
+    fotografias = Fotografia.objects.order_by("fecha_fotografia").filter(publicada=True)
+    if"buscar" in request.GET:
+        nombre_a_buscar=request.GET['buscar']
+        #este buscar hace referencia al imput name de manu en partials
+        if nombre_a_buscar:
+            fotografias=fotografias.filter(nombre__icontains=nombre_a_buscar)
+            #este linea de codigo redefine la variable  fotografias y filtra las fotos para que solo enseñe las que contengan el termino elegido en nombre a buscar
+
+    return render (request, "galeria/buscar.html", {"cards": fotografias})
 #por cada ruta creamos un views definiendolo y recibiendo el request renderizandolo retornandolo y una ruta html
