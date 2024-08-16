@@ -12,3 +12,7 @@ def index(request):
 def imagen(request, foto_id):
     fotografia = get_object_or_404(Fotografia, pk=foto_id)
     return render (request, 'galeria/imagen.HTML',{"fotografia":fotografia})
+
+def buscar(request):
+    return render (request, "buscar.html")
+#por cada ruta creamos un views definiendolo y recibiendo el request renderizandolo retornandolo y una ruta html
