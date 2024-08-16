@@ -14,5 +14,5 @@ def imagen(request, foto_id):
     return render (request, 'galeria/imagen.HTML',{"fotografia":fotografia})
 
 def buscar(request):
-    return render (request, "buscar.html")
+    return render (request, "galeria/buscar.html")
 #por cada ruta creamos un views definiendolo y recibiendo el request renderizandolo retornandolo y una ruta html
