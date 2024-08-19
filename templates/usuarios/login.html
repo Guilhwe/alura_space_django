@@ -36,7 +36,7 @@
                 <nav class="menu-lateral__navegacao">
                     <a href="{% url 'index' %}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Home</a>
                     <a href="{% url 'login' %}"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Login</a>
-                    <a href="{% url 'cadastro' %}"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Cadastrar</a>
+                    <a href="{% url 'registro' %}"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Registrar</a>
                     <a href="#"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Logout</a>
                 </nav>
             </section>
@@ -44,11 +44,11 @@
                 <form action="" method="">
                     <div class="row">
                         <div class="col-12 col-lg-12" style="margin-bottom: 10px;">
-                            <label for="nome_login" style="color:#D9D9D9; margin-bottom: 5px;"><b>Nome de Login</b></label>
+                            <label for="nome_login" style="color:#D9D9D9; margin-bottom: 5px;"><b>Nombre de Login</b></label>
                             <input type="text" class="form-control" name="nome_login" placeholder="Ex.: João Silva" required>
                         </div>
                         <div class="col-12 col-lg-12" style="margin-bottom: 10px;">
-                            <label for="password" style="color:#D9D9D9; margin-bottom: 5px;"><b>Senha</b></label>
+                            <label for="password" style="color:#D9D9D9; margin-bottom: 5px;"><b>Contraseña</b></label>
                             <input type="password" class="form-control" name="password" placeholder="Digite sua senha" required>
                         </div>
                         <div class="col-12 text-center">
