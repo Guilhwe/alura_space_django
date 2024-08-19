@@ -4,7 +4,14 @@ class LoginForms(forms.Form):
     nombre_login=forms.CharField(
         label = "Nombre de Login",
         required=True,
-        max_length=100
+        max_length=100,
+         widget=forms.TextInput(
+            attrs={
+                'class':'form-control',
+                'placeholder': 'Ej: Maravilla Toscano'
+            }
+            #atributos
+        )
 
     )
     
@@ -12,6 +19,12 @@ class LoginForms(forms.Form):
         label = "Contraseña",
         required=True,
         max_length=70,
-        widget=forms.PasswordInput()
+        widget=forms.PasswordInput(
+            attrs={
+                'class':'form-control',
+                'placeholder': 'Escriba su contraseña'
+            }
+           
+        )
 
     )
