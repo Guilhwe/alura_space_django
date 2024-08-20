@@ -43,7 +43,6 @@
             </section>
             <section class="galeria" style="margin-left: 5em">
                 <form action="{% url 'login' %}" method="POST">
-                    
                     {% csrf_token %}
                     <div class="row">
                        {% for field in form.visible_fields %}
@@ -63,4 +62,4 @@
     </div>
 </body>
 
-{% include 'galeria/partials/_footer.html' %}
+{% include 'partials/_footer.html' %}
