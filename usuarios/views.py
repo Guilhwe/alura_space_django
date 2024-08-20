@@ -1,10 +1,31 @@
 from django.shortcuts import render, redirect
 from usuarios.forms import LoginForms, RegistroForms
 from django.contrib.auth.models import User
+from django.contrib import auth
 
 def login(request):
     form=LoginForms()
+
+    if request.method == 'POST':
+        form = LoginForms(request.POST)
+        if form.is_valid():
+            nombre=form['nombre_login'].value()
+            contraseña= form['contraseña'].value()
+        usuario= auth.authenticate(
+            request,
+            username=nombre,
+            password= contraseña
+            )
+        if usuario is not None:
+            auth.login(request,usuario)
+            return redirect('index')
+        else:
+            return redirect('login')
+
+
+
     return render (request, 'usuarios/login.html', {"form" : form})
+
 
 def registro(request):
     form = RegistroForms()
@@ -36,6 +57,6 @@ def registro(request):
         #crea nuevo usuario
         return redirect('login')
     #redirecciona a login
-    
+
 
     return render (request, 'usuarios/registro.html', {"form" : form})
