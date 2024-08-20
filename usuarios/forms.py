@@ -30,6 +30,7 @@ class LoginForms(forms.Form):
     )
 
 class RegistroForms(forms.Form):
+        
         #para heredar las caracteristicas del forms
         nombre_registro=forms.CharField(
         label = "Escribe tu usuario",
@@ -82,3 +83,14 @@ class RegistroForms(forms.Form):
         )
 
     )
+        def clean_nombre_registro(self):
+      #para añadir metodos de validacion
+            nombre = self.cleaned_data.get('nombre_registro')
+            if nombre:
+                nombre = nombre.strip()
+                if ' ' in nombre:
+                    raise forms.ValidationError('No es posible insertar espacios en el usuario')
+                else:
+                    return nombre
+    
+    
