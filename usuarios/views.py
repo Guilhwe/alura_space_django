@@ -33,6 +33,7 @@ def login(request):
 
 
 def registro(request):
+
     form = RegistroForms()
 
     if request.method == 'POST':
@@ -68,3 +69,8 @@ def registro(request):
 
 
     return render (request, 'usuarios/registro.html', {"form" : form})
+
+def logout(request):
+    auth.logout(request)
+    messages.success(request,'Logout hecho')
+    return redirect('login')
