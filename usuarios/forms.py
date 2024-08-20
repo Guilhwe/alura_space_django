@@ -28,3 +28,57 @@ class LoginForms(forms.Form):
         )
 
     )
+
+class RegistroForms(forms.Form):
+        #para heredar las caracteristicas del forms
+        nombre_registro=forms.CharField(
+        label = "Escribe tu usuario",
+        required=True,
+        max_length=100,
+         widget=forms.TextInput(
+            attrs={
+                'class':'form-control',
+                'placeholder': 'Ej: Mara34'
+            }
+            
+        )
+
+    )
+        email= forms.EmailField(
+        label = "Escribe tu email",
+        required=True,
+        max_length=100,
+         widget=forms.EmailInput(
+            attrs={
+                'class':'form-control',
+                'placeholder': 'Ej: Maravilla@gmail.com'
+            }
+            
+        )
+    )
+        contraseña1=forms.CharField(
+        label = "Contraseña",
+        required=True,
+        max_length=70,
+        widget=forms.PasswordInput(
+            attrs={
+                'class':'form-control',
+                'placeholder': 'Escriba su contraseña'
+            }
+           
+        )
+
+    )
+        contraseña2=forms.CharField(
+        label = "Contraseña",
+        required=True,
+        max_length=70,
+        widget=forms.PasswordInput(
+            attrs={
+                'class':'form-control',
+                'placeholder': 'Escriba su contraseña otra vez'
+            }
+           
+        )
+
+    )
