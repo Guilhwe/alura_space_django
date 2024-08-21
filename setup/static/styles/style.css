@@ -407,7 +407,7 @@ table {
         --bs-alert-border-color: #b6d4fe;
 }
 
-/* código anterior omitido */
+
 
 .row {
     --bs-gutter-x: 1.5rem;
@@ -524,3 +524,4 @@ table {
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
 }
+
