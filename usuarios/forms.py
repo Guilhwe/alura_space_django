@@ -29,14 +29,13 @@ class LoginForms(forms.Form):
 
     )
 
-class RegistroForms(forms.Form):
-        
+class RegistroForms(forms.Form): 
         #para heredar las caracteristicas del forms
-        nombre_registro=forms.CharField(
+    nombre_registro=forms.CharField(
         label = "Escribe tu usuario",
         required=True,
         max_length=100,
-         widget=forms.TextInput(
+        widget=forms.TextInput(
             attrs={
                 'class':'form-control',
                 'placeholder': 'Ej: Mara34'
@@ -45,11 +44,11 @@ class RegistroForms(forms.Form):
         )
 
     )
-        email= forms.EmailField(
+    email= forms.EmailField(
         label = "Escribe tu email",
         required=True,
         max_length=100,
-         widget=forms.EmailInput(
+        widget=forms.EmailInput(
             attrs={
                 'class':'form-control',
                 'placeholder': 'Ej: Maravilla@gmail.com'
@@ -57,7 +56,7 @@ class RegistroForms(forms.Form):
             
         )
     )
-        contraseña1=forms.CharField(
+    contraseña1=forms.CharField(
         label = "Contraseña",
         required=True,
         max_length=70,
@@ -70,28 +69,28 @@ class RegistroForms(forms.Form):
         )
 
     )
-        contraseña2=forms.CharField(
+    contraseña2=forms.CharField(
         label = "Contraseña",
         required=True,
         max_length=70,
         widget=forms.PasswordInput(
             attrs={
-                'class':'form-control',
-                'placeholder': 'Escriba su contraseña otra vez'
-            }
+            'class':'form-control',
+            'placeholder': 'Escriba su contraseña otra vez'
+             }
            
         )
 
     )
     
-        def clean_nombre_registro(self):
+    def clean_nombre_registro(self):
       #para añadir metodos de validacion
-            nombre = self.cleaned_data.get('nombre_registro')
-            if nombre:
-                nombre = nombre.strip()
-                if ' ' in nombre:
-                    raise forms.ValidationError('No es posible insertar espacios en el nombre de registro ')
-                else:
-                    return nombre
+        nombre = self.cleaned_data.get('nombre_registro')
+        if nombre:
+            nombre = nombre.strip()
+            if ' ' in nombre:
+                raise forms.ValidationError('No es posible insertar espacios en el nombre de registro ')
+            else:
+                return nombre
     
     

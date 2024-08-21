@@ -42,7 +42,7 @@ def registro(request):
         
         if form.is_valid():
              #para verificar si el formulario es valido
-             if form['contraseña1'].value () != form['contraseña2'].value():
+            if form['contraseña1'].value () != form['contraseña2'].value():
                 messages.error(request,'Las contraseñas no coinciden')
                 return redirect('registro')
              #verficar si las contraseñas son iguales
