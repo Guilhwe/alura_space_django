@@ -16,6 +16,10 @@
                                 <p class="imagem__descricao">{{ fotografia.leyenda }}</p>
                                 <p class="imagem__texto">{{ fotografia.descripcion }}</p>
                         </div>
+                        <div>
+                            <a href="{% url 'editar_imagen' %}"><button  class="btn btn-success col-12" style="padding: top 5px;">Editar información</button></a>
+                            <a href="{% url 'borrar_imagen' %}"><button  class="btn btn-danger col-12" style="padding: top 5px;">Borrar imagen</button></a>
+                        </div>
                     </div>
                 </section>
             </section>
