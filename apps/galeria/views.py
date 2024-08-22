@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404,redirect
 
 from apps.galeria.models import Fotografia
+from apps.galeria.forms import FotografiaForms
 
 from django.contrib import messages
 
@@ -35,7 +36,8 @@ def buscar(request):
     return render (request, "galeria/buscar.html", {"cards": fotografias})
 
 def nueva_imagen(request):
-    return render (request, 'galeria/nueva_imagen.html')
+    form = FotografiaForms
+    return render (request, 'galeria/nueva_imagen.html',{'form' : form})
 
 def editar_imagen(request):
     pass
