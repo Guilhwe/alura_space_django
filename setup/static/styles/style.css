@@ -408,7 +408,6 @@ table {
 }
 
 
-
 .row {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -522,6 +521,7 @@ table {
     -moz-appearance: none;
     appearance: none;
     -webkit-print-color-adjust: exact;
-    color-adjust: exact;
+    print-color-adjust: exact;
 }
+
 

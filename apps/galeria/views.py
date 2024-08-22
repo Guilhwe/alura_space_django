@@ -33,4 +33,14 @@ def buscar(request):
             #este linea de codigo redefine la variable  fotografias y filtra las fotos para que solo enseñe las que contengan el termino elegido en nombre a buscar
 
     return render (request, "galeria/buscar.html", {"cards": fotografias})
+
+def nueva_imagen(request):
+    pass
+
+def editar_imagen(request):
+    pass
+
+def borrar_imagen(request):
+    pass
+
 #por cada ruta creamos un views definiendolo y recibiendo el request renderizandolo retornandolo y una ruta html
