@@ -41,7 +41,7 @@ def nueva_imagen(request):
         return redirect('login')
     form = FotografiaForms
     if request.method == 'POST':
-        form = FotografiaForms(request.POST)
+        form = FotografiaForms(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.SUCCESS(request,'Nueva fotografia registrada')
