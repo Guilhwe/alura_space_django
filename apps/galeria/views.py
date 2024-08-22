@@ -35,7 +35,7 @@ def buscar(request):
     return render (request, "galeria/buscar.html", {"cards": fotografias})
 
 def nueva_imagen(request):
-    pass
+    return render (request, 'galeria/nueva_imagen.html')
 
 def editar_imagen(request):
     pass
