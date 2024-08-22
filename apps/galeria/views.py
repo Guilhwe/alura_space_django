@@ -44,7 +44,7 @@ def nueva_imagen(request):
         form = FotografiaForms(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.SUCCESS(request,'Nueva fotografia registrada')
+            messages.success(request, 'Nueva imagen agregada')
             return redirect('index')
         
     return render (request, 'galeria/nueva_imagen.html',{'form' : form})
