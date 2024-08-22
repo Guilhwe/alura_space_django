@@ -19,7 +19,7 @@ class Fotografia(models.Model):
     descripcion = models.TextField(null= False, blank=False)
     #Textfield porque es unn texto mas largo y elaborado, sin limite de caracteres pero asegurando cubrir el null y blank
     foto= models.ImageField(upload_to= "fotos/%Y/%m/%d", blank=True )
-    publicada = models.BooleanField(default=False)
+    publicada = models.BooleanField(default=True)
     fecha_fotografia = models.DateTimeField(default=datetime.now, blank=False)
     usuario = models.ForeignKey(
         #asociarlo a la base de datos de usuarios
