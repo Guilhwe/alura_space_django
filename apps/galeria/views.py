@@ -63,7 +63,11 @@ def editar_imagen(request, foto_id):
     return render(request, 'galeria/editar_imagen.html',{'form' : form, 'foto_id': foto_id})
     
 
-def borrar_imagen(request):
-    pass
+def borrar_imagen(request, foto_id):
+    fotografia = Fotografia.objects.get(id=foto_id)
+    fotografia.delete()
+    messages.success(request, 'Foto eliminada')
+    return redirect('index')
+    
 
 #por cada ruta creamos un views definiendolo y recibiendo el request renderizandolo retornandolo y una ruta html
