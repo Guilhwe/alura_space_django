@@ -30,7 +30,7 @@ def buscar(request):
             fotografias=fotografias.filter(nombre__icontains=nombre_a_buscar)
             #este linea de codigo redefine la variable  fotografias y filtra las fotos para que solo enseñe las que contengan el termino elegido en nombre a buscar
 
-    return render (request, "galeria/buscar.html", {"cards": fotografias})
+    return render (request, "galeria/index.html", {"cards": fotografias})
 
 def nueva_imagen(request):
     if not request.user.is_authenticated:
