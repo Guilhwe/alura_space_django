@@ -12,9 +12,6 @@ def index(request):
 
 
     fotografias = Fotografia.objects.order_by("fecha_fotografia").filter(publicada=True)
-    
-
-    
     return render (request,'galeria/index.HTML',{"cards": fotografias})
 
 def imagen(request, foto_id):
@@ -68,6 +65,9 @@ def borrar_imagen(request, foto_id):
     fotografia.delete()
     messages.success(request, 'Foto eliminada')
     return redirect('index')
-    
+
+def filtro(request, categoria):
+    fotografias = Fotografia.objects.order_by("fecha_fotografia").filter(publicada=True, categoria=categoria)
+    return render(request,'galeria/index.html',{"cards": fotografias})
 
 #por cada ruta creamos un views definiendolo y recibiendo el request renderizandolo retornandolo y una ruta html
