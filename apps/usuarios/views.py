@@ -41,30 +41,25 @@ def registro(request):
 
         
         if form.is_valid():
-             #para verificar si el formulario es valido
-            if form['contraseña1'].value () != form['contraseña2'].value():
-                messages.error(request,'Las contraseñas no coinciden')
-                return redirect('registro')
-             #verficar si las contraseñas son iguales
              
-        nombre = form['nombre_registro'].value()
-        email = form['email'].value()
-        contraseña = form['contraseña1'].value()
-        #guardar las informaciones del formularia en otras variables para hacerlo  mas manejable
+            nombre = form['nombre_registro'].value()
+            email = form['email'].value()
+            contraseña = form['contraseña1'].value()
+        #guardar las informaciones del formulario en otras variables para hacerlo  mas manejable
         
-        if User.objects.filter(username=nombre).exists():
+            if User.objects.filter(username=nombre).exists():
              messages.error(request, 'El usuario ya está registrado')
              return redirect('registro')
-        #verifica si el usuario ya exite
-        usuario = User.objects.create_user(
+        #verifica si el usuario ya existe
+            usuario = User.objects.create_user(
                 username = nombre,
                 email=email,
                 password=contraseña,
                 )
-        usuario.save()
-        messages.success(request, 'Registrado con éxito')
+            usuario.save()
+            messages.success(request, 'Registrado con éxito')
         #crea nuevo usuario
-        return redirect('login')
+            return redirect('login')
     #redirecciona a login
 
 

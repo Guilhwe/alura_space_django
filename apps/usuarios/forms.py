@@ -92,5 +92,16 @@ class RegistroForms(forms.Form):
                 raise forms.ValidationError('No es posible insertar espacios en el nombre de registro ')
             else:
                 return nombre
+            
+
+    def clean_contraseña(self):
+        cleaned_data = super().clean()
+        contraseña1 = cleaned_data.get("contraseña1")
+        contraseña2 = cleaned_data.get("contraseña2")
+
+        if contraseña1 and contraseña2 and contraseña1 != contraseña2:
+            raise forms.ValidationError('Las contraseñas no coinciden')
+        else:
+            return contraseña2
     
     
